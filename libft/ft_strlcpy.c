@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "libft.a"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size_dst)
 {
