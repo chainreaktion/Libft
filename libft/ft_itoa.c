@@ -6,39 +6,58 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:29:42 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/27 19:45:57 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:35:42 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_fill_string(char *res, int n)
+static void	fill_string(char *res, unsigned int	n, int pos)
 {
-	if (n / 10 != 0)
-		ft_fill_string(res + 1, (n / 10));
-	else 
-		*res = n % 10 + '0';
+	if (n > 9)
+		fill_string(res, n / 10, pos - 1);
+	res[pos] = (n % 10) + '0';
+}
+
+static int	pos_calc(unsigned int n, int pos)
+{
+	if (n == 0)
+		pos = 1;
+	while (n != 0)
+	{
+		pos++;
+		n /= 10;
+	}
+	return (pos);
 }
 
 char	*ft_itoa(int n)
 {
-	char *res;
-	int	len;
+	int		is_minus;
+	int		pos;
+	char 	*res;
+	unsigned int nb;
 
-	len = (n / 10) + 2;
+	pos = 0;
+	is_minus = 0;
 	if (n < 0)
 	{
-		n = -n;
-		len++;
+		is_minus = 1;
+		nb = (unsigned int)(-n);
 	}
-	res = (char *)malloc(sizeof(char) * len + 1);
+	else
+		nb = (unsigned int)(n);
+	pos = pos_calc(nb, pos);
+	res = (char *)malloc(sizeof(char) * (pos + is_minus + 1));
 	if (res == NULL)
 		return (NULL);
-	ft_fill_string(res, n);
-	res[len + 1] = '\0';
+	if (is_minus)
+		res[0] = '-';
+	fill_string(res + is_minus, nb, pos - 1);
+	res[pos + is_minus] = '\0';
 	return (res);
 }
-
+/*
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -50,4 +69,4 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	return (0);
-}
+}*/

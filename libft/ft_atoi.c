@@ -6,9 +6,11 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:19:49 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/23 15:54:17 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:19:18 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
