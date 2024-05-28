@@ -6,7 +6,7 @@
 #    By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 12:01:20 by jschmitz          #+#    #+#              #
-#    Updated: 2024/05/23 12:51:46 by jschmitz         ###   ########.fr        #
+#    Updated: 2024/05/28 10:34:51 by jschmitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CC = cc
 SUBJ = 
 
 OBJ =
+
+BONUS = 
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -42,5 +44,7 @@ fclean:	clean
 	RM $(OBJ) 
 
 re: fclean all
+
+bonus: 
 
 .PHONY: re clean fclean all
