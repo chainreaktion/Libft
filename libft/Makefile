@@ -6,7 +6,7 @@
 #    By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 12:01:20 by jschmitz          #+#    #+#              #
-#    Updated: 2024/05/28 10:34:51 by jschmitz         ###   ########.fr        #
+#    Updated: 2024/05/29 18:36:55 by jschmitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,29 +16,44 @@ CC = cc
 
 SUBJ = 
 
-OBJ =
 
-BONUS = 
+LIBC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
+	ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
+	ft_strncmp.c ft_memchr.c ft_memcmp.c t_strnstr.c ft_atoi.c ft_calloc.c \
+	ft_strdup.c
+
+ADDITIONAL = ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
+	ft_putendl_fd.c ft_putnbr_fd 
+
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c 
+
+SRCS = ${LIBS} ${ADDITIONAL}
+
+SRCSTOTAL = ${SRCS} ${BONUS}
+
+OBJ = $(SRCS:.c=.o)
+
+BONUS_OBJ = $(BONUS:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
 
-SOURCES = ft_isalpha.c ft_memchr.c ft_memset.c ft_strlcpy.c ft_strrchr.c \
-	ft_atoi.c ft_isascii.c ft_memcmp.c ft_strchr.c ft_strlen.c ft_tolower.c \
-	ft_bzero.c ft_isdigit.c ft_memcpy.c ft_strdup.c ft_strncmp.c \
-	ft_toupper.c ft_isalnum.c ft_isprint.c ft_memmove.c ft_strlcat.c \
-	ft_strnstr.c
-
 RM = rm -f
+
+AR = ar -rcs
 
 all = $(NAME)
 
-$(NAME) : $(OBJECTS)
+$(NAME) : $(OBJ)
 	ar rcs $@ $^
 
 ${SRCS}%.o : ${SRCS}%.c
-	${CC} ${CFLAGS} -I${INCLUDES} -o $@ -c $<
+	${CC} ${CFLAGS} -o $@ -c $<
 
 clean:
+	$(RM) $(OBJ)
 
 fclean:	clean
 	RM $(OBJ) 
@@ -47,4 +62,4 @@ re: fclean all
 
 bonus: 
 
-.PHONY: re clean fclean all
+.PHONY: re clean fclean all bonus

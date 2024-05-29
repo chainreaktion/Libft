@@ -6,13 +6,13 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:29:42 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 21:35:42 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:47:48 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	fill_string(char *res, unsigned int	n, int pos)
+static void	fill_string(char *res, unsigned int n, int pos)
 {
 	if (n > 9)
 		fill_string(res, n / 10, pos - 1);
@@ -33,10 +33,10 @@ static int	pos_calc(unsigned int n, int pos)
 
 char	*ft_itoa(int n)
 {
-	int		is_minus;
-	int		pos;
-	char 	*res;
-	unsigned int nb;
+	int				is_minus;
+	int				pos;
+	char			*res;
+	unsigned int	nb;
 
 	pos = 0;
 	is_minus = 0;

@@ -6,17 +6,14 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 21:53:58 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 21:59:51 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:18:53 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char to_uppercase(unsigned int index, char c) 
+void	test_capitalize(unsigned int index, char *s) 
 {
-    if (c >= 'a' && c <= 'z') 
+    if (s[index] >= 'a' && s[index] <= 'z') 
 	{
-        return (c - ('a' - 'A'));
+        s[index] -= ('a' - 'A');
     }
-	index += 0; 
-    return c;
 }
-
