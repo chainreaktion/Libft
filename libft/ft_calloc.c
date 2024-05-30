@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:05:46 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/23 19:08:27 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:25:56 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	res = (void *)malloc(nmemb * size);
 	if (res == NULL)
 		return (NULL);
-	ft_bzero(res, nmemb);	
+	ft_bzero(res, nmemb);
 	return (res);
 }
-

@@ -6,13 +6,13 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:17:30 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/20 14:13:55 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:29:15 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int arg)
 {
-	if (arg >= 32 && <= 126)
+	if (arg >= 32 && arg <= 126)
 		return (1);
 	else
 		return (0);

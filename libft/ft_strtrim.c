@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 20:36:35 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/24 18:08:15 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:28:11 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		c;
 	char	*res;
-	
+
 	i = 0;
 	j = ft_strlen(s1);
 	while (s1[i] && ft_contains(set, s1[i]) == 0)

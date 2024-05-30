@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 21:23:47 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/21 11:13:53 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:19:14 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	ft_strlen(const char *str)
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
-	char 	*cpy;
+	int		i;
+	char	*cpy;
 
 	cpy = malloc (sizeof(char) * (ft_strlen(s) + 1));
 	if (cpy == NULL)

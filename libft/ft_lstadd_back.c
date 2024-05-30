@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:59:51 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 16:20:46 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:20:32 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*back;
-	 //check first that lst and new are no nullpointers
+	t_list	*back;//check first that lst and new are no nullpointers
 	if (lst == NULL)
-		return ;
-	//case if the list that the pointer points to is empty
+		return ;//case if the list that the pointer points to is empty
 	if (*lst == NULL)
 	{
 		*lst = new;
@@ -26,6 +24,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-	new->next = NULL;
-	//not sure if the last step is relly necessary
+	new->next = NULL;//not sure if the last step is relly necessary
 }

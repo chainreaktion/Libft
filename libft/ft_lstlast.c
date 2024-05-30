@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:37:37 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 15:58:22 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:28:41 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst = NULL)
+	if (lst == NULL)
 		return (NULL);
 	while (lst->next != NULL)
 	{

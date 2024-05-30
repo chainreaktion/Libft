@@ -6,9 +6,11 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:26:53 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/23 15:50:31 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:34:28 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -17,9 +19,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (i < (n - 1) && s1[i] && s1[i] == s2[i])
+	while (i <= n && s1[i] && s1[i] == s2[i])
 		i++;
-	return (s1[i] - s2[i]);
+	if (i == n)
+		return (0);
+	return ((int)(s1[i] - s2[i]));
 }
 
 /*#include <stdio.h>
