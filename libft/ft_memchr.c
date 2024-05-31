@@ -6,11 +6,11 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:15:24 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/30 17:23:24 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:41:53 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -48,6 +48,7 @@ while (c < i)
 printf("%d", 
 c++}
 %ld\n ft: %s\n", s, c, ft_memchr(s, c, sizeof(s)), memchr(s, c, sizeof(s))
-printf("S: %s\t c1: %d\n moi: %s\n ft: %s\n", s, c1, ft_memchr(s, c1, sizeof(s)), memchr(s, c1, sizeof(s)));
+printf("S: %s\t c1: %d\n moi: %s\n ft: %s\n", s, c1, 
+ft_memchr(s, c1, sizeof(s)), memchr(s, c1, sizeof(s)));
 return (0);
 }*/

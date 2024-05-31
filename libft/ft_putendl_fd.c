@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:27:25 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/27 20:29:14 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:49:15 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_putendl_fd(char *s, int fd)
 		write (fd, &s[i], 1);
 		i++;
 	}
-	write (fd, '\n', 1);
+	write (fd, "\n", 1);
 }
