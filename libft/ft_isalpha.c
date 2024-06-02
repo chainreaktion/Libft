@@ -10,14 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isalpha(int arg)
 {
-	if (arg >= 65 && arg <= 90)
+	if ((arg >= 65 && arg <= 90) || (arg >= 97 && arg <= 122))
 		return (1);
-	if (arg >= 97 && arg <= 122)
-		return (2);
 	else
 		return (0);
 }
