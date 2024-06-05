@@ -50,7 +50,9 @@ fclean:	clean
 
 re: fclean all
 
+bonus: 
+	${CC} ${CFLAGS} -c ${OBJBONUS}
+	${AR} ${NAME} ${OBJBONUS}
+
 .PHONY: re clean fclean all bonus
 
-##bonus: $(OBJBONUS)
- ##$(AR) $(NAME) $^

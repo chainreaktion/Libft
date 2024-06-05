@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 14:05:46 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/06/03 14:49:26 by jschmitz         ###   ########.fr       */
+/*   Created: 2024/05/28 15:37:37 by jschmitz          #+#    #+#             */
+/*   Updated: 2024/05/30 17:28:41 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*res;
-
-	if (size != 0 && nitems > SIZE_MAX / size)
+	if (lst == NULL)
 		return (NULL);
-	res = malloc(nitems * size);
-	if (res == NULL)
-		return (NULL);
-	ft_bzero(res, nitems * size);
-	return (res);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

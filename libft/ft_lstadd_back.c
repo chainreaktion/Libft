@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 14:05:46 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/06/03 14:49:26 by jschmitz         ###   ########.fr       */
+/*   Created: 2024/05/28 15:59:51 by jschmitz          #+#    #+#             */
+/*   Updated: 2024/05/30 17:20:32 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+//check first that lst is not a nullpointer 
+// then case if the list that the pointer points to is empty
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void	*res;
+	t_list	*back;
 
-	if (size != 0 && nitems > SIZE_MAX / size)
-		return (NULL);
-	res = malloc(nitems * size);
-	if (res == NULL)
-		return (NULL);
-	ft_bzero(res, nitems * size);
-	return (res);
+	if (lst == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	back = ft_lstlast(*lst);
+	back->next = new;
+	new->next = NULL;
 }
+//not sure if the last step is relly necessary
