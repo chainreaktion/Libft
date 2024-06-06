@@ -6,11 +6,19 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:23:38 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/06/05 14:25:12 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:25:14 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
-{}
+{
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:34:15 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/06/05 14:25:22 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:22:53 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,59 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    int i;
+	t_list	*current;
+	t_list	*temp;
 
-    if (!lst || !del)
-        return ;
-    
-    i = ft_lstsize(lst);
-    while (i > 0)
-    {
-       ft_lstdelone(ft_lstlast); 
-        i--;
-    }
+	current = *lst;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		del(temp->content);
+		free(temp);
+	}
+	*lst = NULL;
 }
+/* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Example del function
+void del(void *content)
 {
-    t_list  *current;
-    t_list  *temp;
-
-    current = *lst;
-    while (current != NULL)
-    {
-        temp = current;
-        current = current->next;
-        del(temp->content);
-        free(temp);
-    }
+free(content);
 }
+
+// Main function to test ft_lstclear
+int main()
+{
+t_list *list = NULL;
+t_list *elem1;
+t_list *elem2;
+t_list *elem3;
+
+// Create list elements
+elem1 = ft_lstnew(strdup("Element 1"));
+elem2 = ft_lstnew(strdup("Element 2"));
+elem3 = ft_lstnew(strdup("Element 3"));
+
+// Add elements to the list
+ft_lstadd_back(&list, elem1);
+ft_lstadd_back(&list, elem2);
+ft_lstadd_back(&list, elem3);
+
+// Clear the list
+ft_lstclear(&list, del);
+
+// Verify the list is cleared
+if (list == NULL)
+{
+printf("List successfully cleared.\n");
+}
+else
+{
+printf("List clearing failed.\n");
+}
+
+return 0;
+} */

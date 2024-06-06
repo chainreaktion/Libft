@@ -6,7 +6,7 @@
 #    By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 12:01:20 by jschmitz          #+#    #+#              #
-#    Updated: 2024/05/31 18:38:04 by jschmitz         ###   ########.fr        #
+#    Updated: 2024/06/06 22:38:14 by jschmitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	${AR} $(NAME) $(OBJ)
 
-%.o : %.c
-	${CC} ${CFLAGS} -c $(SRCS)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(OBJBONUS)
@@ -50,8 +50,7 @@ fclean:	clean
 
 re: fclean all
 
-bonus: 
-	${CC} ${CFLAGS} -c ${OBJBONUS}
+bonus: $(OBJBONUS) 
 	${AR} ${NAME} ${OBJBONUS}
 
 .PHONY: re clean fclean all bonus
