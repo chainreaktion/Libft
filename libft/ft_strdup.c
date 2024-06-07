@@ -6,22 +6,12 @@
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 21:23:47 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/31 19:42:00 by jschmitz         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:20:39 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-static int	ft_strlen(const char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-*/
 char	*ft_strdup(const char *s)
 {
 	int		i;

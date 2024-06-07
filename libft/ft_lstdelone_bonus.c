@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 15:59:51 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/06/07 11:20:40 by jschmitz         ###   ########.fr       */
+/*   Created: 2024/05/28 16:20:56 by jschmitz          #+#    #+#             */
+/*   Updated: 2024/06/07 14:16:43 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//check first that lst is not a nullpointer 
-// then case if the list that the pointer points to is empty
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list	*last;
-
-	if (!lst)
+	if (!lst || !del)
 		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	del(lst->content);
+	free(lst);
 }

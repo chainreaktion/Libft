@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 15:24:59 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 15:40:08 by jschmitz         ###   ########.fr       */
+/*   Created: 2024/05/28 15:33:25 by jschmitz          #+#    #+#             */
+/*   Updated: 2024/06/07 14:17:49 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//check first that lst and new are no nullpointers
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (lst && new)
+	int	len;
+
+	len = 0;
+	while (lst)
 	{
-	new->next = *lst;
-	*lst = new;
+		++len;
+		lst = lst->next;
 	}
+	return (len);
 }

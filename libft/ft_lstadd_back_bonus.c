@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschmitz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 10:38:19 by jschmitz          #+#    #+#             */
-/*   Updated: 2024/05/28 15:40:25 by jschmitz         ###   ########.fr       */
+/*   Created: 2024/05/28 15:59:51 by jschmitz          #+#    #+#             */
+/*   Updated: 2024/06/07 14:15:56 by jschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+//check first that lst is not a nullpointer 
+// then case if the list that the pointer points to is empty
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*node;
+	t_list	*last;
 
-	node = malloc(sizeof(t_list));
-	if (node == NULL)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (!lst)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
